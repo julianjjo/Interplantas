@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+ - 2.1.0
+before_script:
+ - mysql -e 'create database Interplantas_test;'
+install: 
+ - gem install bundler
+ - bundle install
+script:
+ - rake cucumber 
