@@ -7,7 +7,7 @@ Given(/^Que el viverista desea mirar las plantas a comprar$/) do
 end
 
 When(/^Da click en el link Plantas de la barra de navegación$/) do
- #  @driver.findElement(By.id("lk_plantas")).click();
+  # @driver.findElement(By.id("lk_plantas")).click();
 	# wait = Selenium::WebDriver::Wait.new(:timeout => 10)
 end
 
