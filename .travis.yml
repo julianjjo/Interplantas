@@ -1,12 +1,11 @@
 language: ruby
 rvm:
- - 2.1.0
+ - 2.1.1
 before_script:
  - mysql -e 'create database Interplantas_test;'
 install: 
  - gem install bundler
  - bundle config build.nokogiri --use-system-libraries
  - bundle install
- - gem uninstall psych
 script:
  - rake cucumber 
