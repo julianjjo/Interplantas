@@ -25,16 +25,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
-<<<<<<< HEAD
   adapter: sqlite3
-  pool: 5
-  timeout: 5000
-  database: db/test.sqlite3
-=======
-  <<: *default
-  database: Interplantas_test
-  username: travis
->>>>>>> 552848cc181d8a9179f6a21df478c0b33d054cf8
+  database: ":memory:"
+  timeout: 500
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
