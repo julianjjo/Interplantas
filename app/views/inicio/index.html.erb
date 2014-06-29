@@ -1,4 +1,5 @@
+<% content_for(:titulo) do %>Interplantas<% end %>
 <ul>
-	<li><a href="/" id="lk_inicio">Inicio</a></li>
-	<li><a href="/plantas" id="lk_plantas">Plantas</a></li>
+	<li><%= link_to "Inicio", root_path %></li>
+	<li><%= link_to "Plantas", plantas_path, id: "lk_plantas" %></li>
 </ul>

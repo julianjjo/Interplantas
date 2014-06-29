@@ -1,17 +1,14 @@
 require "rubygems"
-require "selenium-webdriver"
+require 'capybara/rails'
 
 Given(/^Que el viverista desea mirar las plantas a comprar$/) do
-  @driver = Selenium::WebDriver.for :firefox
-  @driver.get "http://localhost:3000"  
+  visit '/' 
 end
 
-When(/^Da click en el link Plantas de la barra de navegación$/) do
-  @driver.findElement(By.id("lk_plantas")).click()
-	wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+When(/^Da click en el link Plantas de la barra de navegación$/) do  
+	click_link 'Plantas'  
 end
 
-Then(/^Abrira la pagina mostrar plantas con el titulo "(.*?)"$/) do |titulo|  
-  expect(@driver.title).to eq(titulo)
-  @driver.quit
+Then(/^Abrira la pagina mostrar plantas con el titulo "(.*?)"$/) do |titulo| 
+  expect(page.title).to eq(titulo)
 end
