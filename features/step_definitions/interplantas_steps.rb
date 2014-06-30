@@ -5,7 +5,7 @@ Given(/^Que el viverista desea mirar las plantas del vivero$/) do
   visit '/' 
 end
 
-When(/^Da click en el link Plantas de la barra de navegación$/) do  
+When(/^Da click en el link Vivero de la barra de navegación$/) do  
 	click_link 'Vivero'  
 end
 
