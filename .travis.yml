@@ -5,5 +5,4 @@ install:
  - bundle config build.nokogiri --use-system-libraries
  - bundle install
 script:
- - rake cucumber 
- - rake spec
+ - bundle exec rake
