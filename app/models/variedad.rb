@@ -1,3 +1,3 @@
 class Variedad < ActiveRecord::Base
-	has_many :planta
+	has_many :plantas
 end
