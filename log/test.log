@@ -792,3 +792,33 @@ Processing by PlantaController#index as HTML
   Rendered planta/index.html.erb within layouts/application (1.3ms)
 Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.2ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "planta" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "variedad_id" integer, "nombre" varchar(255), "descripcion" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "variedads" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "descripcion" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140701133253')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140629150557')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Processing by InicioController#index as HTML
+  Rendered inicio/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by InicioController#index as HTML
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "planta" ("created_at", "descripcion", "nombre", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-01 14:57:41.834617"], ["descripcion", "Cayeno de color rosado"], ["nombre", "Cayeno Rojo"], ["updated_at", "2014-07-01 14:57:41.834617"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mPlanta Load (0.1ms)[0m  SELECT  "planta".* FROM "planta"  WHERE "planta"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "variedads" ("created_at", "descripcion", "nombre", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", "2014-07-01 14:57:41.843088"], ["descripcion", "Hibiscus"], ["nombre", "Cayeno"], ["updated_at", "2014-07-01 14:57:41.843088"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mVariedad Load (0.1ms)[0m  SELECT  "variedads".* FROM "variedads"  WHERE "variedads"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
