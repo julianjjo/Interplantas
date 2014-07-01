@@ -1,0 +1,2 @@
+module VariedadHelper
+end

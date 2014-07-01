@@ -1,0 +1,4 @@
+<% content_for(:titulo) do %>Vivero<% end %>
+<% @variedades.each do |variedad| %>
+	<%= "#{variedad.nombre}" %>
+<% end %>
