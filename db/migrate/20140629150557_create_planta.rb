@@ -3,7 +3,7 @@ class CreatePlanta < ActiveRecord::Migration
     create_table :planta do |t|
       t.string :nombre
       t.text :descripcion
-
+      t.integer  :variedad_id
       t.timestamps
     end
   end

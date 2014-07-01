@@ -2034,3 +2034,31 @@ Migrating to CreatePlanta (20140629150557)
   [1m[35mSQL (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140629150557')
   [1m[36m (45.7ms)[0m  [1mCOMMIT[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (68.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (191.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreatePlanta (20140629150557)
+  [1m[35m (75.7ms)[0m  CREATE TABLE `planta` (`id` int(11) auto_increment PRIMARY KEY, `nombre` varchar(255), `descripcion` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140629150557')
+  [1m[36m (45.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVariedads (20140701133253)
+  [1m[35m (249.2ms)[0m  CREATE TABLE `variedads` (`id` int(11) auto_increment PRIMARY KEY, `nombre` varchar(255), `descripcion` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140701133253')
+  [1m[36m (39.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (73.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (183.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreatePlanta (20140629150557)
+  [1m[35m (91.9ms)[0m  CREATE TABLE `planta` (`id` int(11) auto_increment PRIMARY KEY, `nombre` varchar(255), `descripcion` text, `variedad_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140629150557')
+  [1m[36m (42.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateVariedads (20140701133253)
+  [1m[35m (73.6ms)[0m  CREATE TABLE `variedads` (`id` int(11) auto_increment PRIMARY KEY, `nombre` varchar(255), `descripcion` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20140701133253')
+  [1m[36m (47.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
