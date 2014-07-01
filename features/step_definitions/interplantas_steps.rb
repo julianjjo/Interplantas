@@ -12,3 +12,7 @@ end
 Then(/^Abrira la pagina que muestra las plantas con el titulo "(.*?)"$/) do |titulo| 
   expect(page.title).to eq(titulo)
 end
+
+Then(/^Mostrara las variedades de plantas$/) do
+  expect(page).to have_text("Cayeno (Hibiscus)")
+end
