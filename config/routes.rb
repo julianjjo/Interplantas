@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'plantas' => 'planta#index'
   get 'variedades' => 'variedad#index'
+  get '/plantas/:id', to: 'planta#show'
 
   root to: 'inicio#index'
 
