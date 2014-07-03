@@ -21,7 +21,7 @@ Entonces(/^mostrara la variedad con el nombre "(.*?)"$/) do |variedad_que_se_esp
   expect(page).to have_text(variedad_que_se_espera)
 end
 
-Dado(/^que busca las plantas de la variedad (.*?) en la pagina vivero$/) do |variedad|
+Dado(/^que busca las plantas de la variedad "(.*?)" en la pagina vivero$/) do |variedad|
   @variedad = Variedad.create(nombre: variedad)
   visit '/variedades'
 end
@@ -36,12 +36,22 @@ Entonces(/^mostrara la planta con el nombre "(.*?)"$/) do |planta_que_se_espera|
   expect(page).to have_text(planta_que_se_espera)
 end
 
-Cuando(/^en el link de la planta "(.*?)"$/) do |nombre_planta|
-  click_link "#{nombre_planta}"
+Dado(/^que busca las plantas de la "(.*?)" en la pagina vivero$/) do |variedad|
+  @nombre_de_la_variedad = variedad
+  @variedad = Variedad.create(nombre: variedad)
+  visit '/variedades'
 end
 
-Entonces(/^mostrara la informacion completa de la planta con nombre "(.*?)"$/) do |nombre_planta|
-  expect(page).to have_text(nombre_planta)
+Cuando(/^da click en la variedad de la "(.*?)"$/) do |planta|
+  @variedad.plantas.build(nombre: planta)
+  @variedad.save
+  click_link "#{@nombre_de_la_variedad}"
 end
+
+Entonces(/^mostrara la informacion completa de la planta con "(.*?)"$/) do |nombre|
+  expect(page).to have_text(nombre)
+end
+
+
 
 
