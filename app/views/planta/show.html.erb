@@ -1,2 +1,4 @@
 <% content_for(:titulo) do %>Vivero<% end %>
-Cayeno Rosado
+<% @plantas.each do |planta| %>
+	<%= planta.nombre %>	
+<% end %>

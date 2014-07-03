@@ -1,8 +1,8 @@
 # language: es
 Característica: Mostrar las plantas
-  Yo como viverista 
-  Deseo poder mirar las plantas del vivero que quiero comprar
-  Para comprarlas
+  Yo como cliente de vivero
+  Deseo mirar las plantas que quiero comprar
+  Para ganar dinero y/o disfrutarlas
 
   Antecedentes:
     Dado que el viverista desea mirar las plantas del vivero   
