@@ -26,12 +26,22 @@ Dado(/^que busca las plantas de la variedad (.*?) en la pagina vivero$/) do |var
   visit '/variedades'
 end
 
-Cuando(/^doy click en la variedad Cayeno$/) do
+Cuando(/^doy click en la variedad (.*?)$/) do |variedad|
   @variedad.plantas.build(nombre: "Cayeno Rosado")
   @variedad.save
-  click_link 'Cayeno'
+  click_link "#{variedad}"
 end
 
 Entonces(/^mostrara la planta con el nombre "(.*?)"$/) do |planta_que_se_espera|
   expect(page).to have_text(planta_que_se_espera)
 end
+
+Cuando(/^en el link de la planta "(.*?)"$/) do |nombre_planta|
+  click_link "#{nombre_planta}"
+end
+
+Entonces(/^mostrara la informacion completa de la planta con nombre "(.*?)"$/) do |nombre_planta|
+  expect(page).to have_text(nombre_planta)
+end
+
+
