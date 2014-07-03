@@ -15,7 +15,7 @@ RSpec.describe VariedadController, :type => :controller do
   	end	
   	describe "GET show" do
   		before(:each) do
-			@variedad = Variedad.new
+			@variedad = Variedad.create(nombre: "Cayeno", descripcion: "Hibiscus")
 		end
 	    it "responde correctamente" do
 	      get :show, :id => 1
