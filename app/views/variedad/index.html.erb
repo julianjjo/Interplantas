@@ -1,4 +1,4 @@
 <% content_for(:titulo) do %>Vivero<% end %>
 <% @variedades.each do |variedad| %>
-	<a href="#"><%= "#{variedad.nombre}" %></a>
+	<%= link_to "#{variedad.nombre}", controller: "planta", action: "show", id: variedad.id %>
 <% end %>
