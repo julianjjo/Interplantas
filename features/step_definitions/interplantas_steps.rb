@@ -52,6 +52,17 @@ Entonces(/^mostrara la informacion completa de la planta con "(.*?)"$/) do |nomb
   expect(page).to have_text(nombre)
 end
 
+Dado(/^que da esta en inicio$/) do
+  visit '/' 
+end
+
+Cuando(/^da click en finca raiz$/) do
+  click_link 'fincaraiz'
+end
+
+Entonces(/^mostrara los immuebles disponibles de pagina con titulo "(.*?)"$/) do |titulo|
+  expect(page.title).to eq(titulo)
+end
 
 
 
