@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'variedades' => 'variedad#index'
   get 'inmuebles' => 'inmueble#index'
   get '/variedadplantas/:id', to: 'variedad#show'
-  get '/planta/:id', to: 'planta#show'
+  get '/planta/:id', to: 'planta#show', as: :planta
   root to: 'inicio#index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
