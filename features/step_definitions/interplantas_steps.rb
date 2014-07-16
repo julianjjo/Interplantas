@@ -64,5 +64,11 @@ Entonces(/^mostrara los immuebles disponibles de pagina con titulo "(.*?)"$/) do
   expect(page.title).to eq(titulo)
 end
 
+Cuando(/^busca el tipo de inmueble "(.*?)"$/) do |tipo_de_inmueble|
+  @tipo_de_inmuebles = TipoDeInmueble.create(nombre: tipo_de_inmueble)
+end
 
+Entonces(/^mostrara el tipo de inmueble "(.*?)"$/) do |tipo_de_inmueble|	
+  expect(page).to have_text(tipo_de_inmueble)
+end
 
