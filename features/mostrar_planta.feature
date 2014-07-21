@@ -1,8 +1,5 @@
 # language: es
 Característica: Mostrar las plantas
-  Yo como cliente de vivero
-  Deseo mirar las plantas que quiero comprar
-  Para ganar dinero y/o disfrutarlas
 
   Escenario: Mirar las plantas de una variedad
     Dado que busca las plantas de la variedad "Cayeno" en la pagina vivero 

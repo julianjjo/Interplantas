@@ -1,8 +1,5 @@
 # language: es
 Característica: Mostrar las variedades
-  Yo como cliente de vivero
-  Deseo mirar las variedades de la plantas que quiero comprar
-  Para ganar dinero y/o disfrutarlas
 
   Antecedentes:
     Dado que el viverista desea mirar las plantas del vivero       

@@ -1,2 +1,4 @@
 <% content_for(:titulo) do %>Finca Raiz<% end %>
-Apartamento
+<% @tipos_de_inmueble.each do |tipo_de_inmueble| %>
+	<%= link_to("#{tipo_de_inmueble.nombre}", inmuebles_path(id: tipo_de_inmueble.id)) %>
+<% end %>

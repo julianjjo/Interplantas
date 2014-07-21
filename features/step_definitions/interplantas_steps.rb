@@ -64,11 +64,23 @@ Entonces(/^mostrara los immuebles disponibles de pagina con titulo "(.*?)"$/) do
   expect(page.title).to eq(titulo)
 end
 
-Cuando(/^busca el tipo de inmueble "(.*?)"$/) do |tipo_de_inmueble|
-  @tipo_de_inmuebles = TipoDeInmueble.create(nombre: tipo_de_inmueble)
+Dado(/^que busca el "(.*?)"$/) do |tipo_de_inmueble|
+  TipoDeInmueble.create(nombre: tipo_de_inmueble)
 end
 
-Entonces(/^mostrara el tipo de inmueble "(.*?)"$/) do |tipo_de_inmueble|	
-  expect(page).to have_text(tipo_de_inmueble)
+Entonces(/^mostrara el "(.*?)"$/) do |tipo_de_inmueble|
+  expect(page).to have_text(tipo_de_inmueble)  
+end
+
+Dado(/^que da click en finca raiz$/) do
+  click_link 'fincaraiz'
+end
+
+Dado(/^que busca el tipo de inmueble "(.*?)"$/) do |tipo_de_inmueble|
+  TipoDeInmueble.create(nombre: tipo_de_inmueble)
+end
+
+Cuando(/^da click en el tipo de inmueble "(.*?)"$/) do |tipo_de_inmueble|
+  click_link tipo_de_inmueble
 end
 
