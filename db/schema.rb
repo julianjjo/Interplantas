@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716143652) do
+ActiveRecord::Schema.define(version: 20140724153929) do
+
+  create_table "inmuebles", force: true do |t|
+    t.integer  "tipo_de_inmueble_id"
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "planta", force: true do |t|
     t.integer  "variedad_id"

@@ -1,1 +1,5 @@
 <% content_for(:titulo) do %><% @tipo_de_inmueble.nombre %><% end %>
+
+<% @inmuebles.each do |inmueble| %>
+	<%= inmueble.nombre %>
+<% end %>

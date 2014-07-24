@@ -60,10 +60,9 @@ Cuando(/^da click en finca raiz$/) do
   click_link 'fincaraiz'
 end
 
-Entonces(/^mostrara los immuebles disponibles de pagina con titulo "(.*?)"$/) do |titulo|
+Entonces(/^mostrara los immuebles en la pagina con titulo "(.*?)"$/) do |titulo|
   expect(page.title).to eq(titulo)
 end
-
 Dado(/^que busca el "(.*?)"$/) do |tipo_de_inmueble|
   TipoDeInmueble.create(nombre: tipo_de_inmueble)
 end
@@ -77,10 +76,18 @@ Dado(/^que da click en finca raiz$/) do
 end
 
 Dado(/^que busca el tipo de inmueble "(.*?)"$/) do |tipo_de_inmueble|
-  TipoDeInmueble.create(nombre: tipo_de_inmueble)
+  @tipodeinmueble = TipoDeInmueble.create(nombre: tipo_de_inmueble)
 end
 
 Cuando(/^da click en el tipo de inmueble "(.*?)"$/) do |tipo_de_inmueble|
   click_link tipo_de_inmueble
 end
 
+Cuando(/^busca el inmueble "(.*?)"$/) do |inmueble|
+  @tipodeinmueble.inmuebles.build(nombre: inmueble)
+  @tipodeinmueble.save
+end
+
+Entonces(/^mostrara el el inmueble "(.*?)"$/) do |inmueble|
+  expect(page).to have_text(inmueble) 
+end
